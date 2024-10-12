@@ -1,0 +1,24 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Flask App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Simple Flask App</h1>
+    {% if result %}
+        <h2>Result:</h2>
+        <p>{{ result }}</p>
+        <a href="{{ url_for('home') }}">Go back</a>
+    {% else %}
+        <form method="POST">
+            <label for="user_input">Enter some text:</label>
+            <input type="text" id="user_input" name="user_input" required>
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+</body>
+</html>
+
